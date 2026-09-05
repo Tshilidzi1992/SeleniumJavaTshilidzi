@@ -3,6 +3,7 @@ package Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 public class BrowserFactory {
 
@@ -18,5 +19,8 @@ public class BrowserFactory {
         driver.get(url);
         return driver;
     }
-
+    @Test
+    public void testBrowser(){
+        LaunchBrowser("chrome", "https://ndosisimplifiedautomation.vercel.app/");
+    }
 }
