@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.InventoryPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTests extends base {
@@ -30,5 +31,7 @@ public class LoginTests extends base {
         inventoryPage.selectBrand("Apple");
 
         inventoryPage.selectStorage128GB();
+
+        Assert.assertEquals(inventoryPage.getUnitPrice(), "R480.00");
     }
 }
