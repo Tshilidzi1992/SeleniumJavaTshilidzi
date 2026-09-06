@@ -25,6 +25,9 @@ public class InventoryPage {
     @FindBy(id = "color")
     WebElement colorDropdown;
 
+    @FindBy(id= "quantity")
+    WebElement quantityInput;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -50,5 +53,10 @@ public class InventoryPage {
     public void selectColor(String color){
         Select select = new Select(colorDropdown);
         select.selectByVisibleText(color);
+    }
+
+    public void enterQuantity(String quantity){
+        quantityInput.clear();
+        quantityInput.sendKeys(quantity);
     }
 }

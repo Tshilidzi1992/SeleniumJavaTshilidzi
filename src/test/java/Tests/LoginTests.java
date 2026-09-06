@@ -33,5 +33,9 @@ public class LoginTests extends base {
         inventoryPage.selectStorage128GB();
 
         Assert.assertEquals(inventoryPage.getUnitPrice(), "R480.00");
+
+        inventoryPage.selectColor("Blue");
+
+        inventoryPage.enterQuantity("2");
     }
 }
