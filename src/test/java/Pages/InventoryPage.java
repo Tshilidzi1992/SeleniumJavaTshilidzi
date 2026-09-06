@@ -34,6 +34,12 @@ public class InventoryPage {
     @FindBy(id= "address")
     WebElement addressInput;
 
+    @FindBy(id= "inventory-next-btn")
+    WebElement nextButton;
+
+    @FindBy(id = "shipping-express")
+    WebElement expressShipping;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -73,5 +79,13 @@ public class InventoryPage {
     public  void  enterAddress(String address){
         addressInput.clear();
         addressInput.sendKeys(address);
+    }
+
+    public void clickNext(){
+        nextButton.click();
+    }
+
+    public void selectExpressShipping(){
+        expressShipping.click();
     }
 }
