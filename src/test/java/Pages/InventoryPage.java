@@ -40,4 +40,7 @@ public class InventoryPage {
     public void selectStorage128GB(){
         storage128GB.click();
     }
+    public String getUnitPrice(){
+        return unitPrice.getText();
+    }
 }
