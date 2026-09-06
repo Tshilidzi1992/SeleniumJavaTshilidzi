@@ -37,5 +37,7 @@ public class LoginTests extends base {
         inventoryPage.selectColor("Blue");
 
         inventoryPage.enterQuantity("2");
+
+        Assert.assertEquals(inventoryPage.getSubtotal(), "R960.00");
     }
 }
