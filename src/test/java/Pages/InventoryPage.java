@@ -19,8 +19,11 @@ public class InventoryPage {
     @FindBy(id = "storage-128GB")
     WebElement storage128GB;
 
-    @FindBy(id ="unit- price")
+    @FindBy(id ="unit-price-value")
     WebElement unitPrice;
+
+    @FindBy(id = "color")
+    WebElement colorDropdown;
 
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
@@ -42,5 +45,10 @@ public class InventoryPage {
     }
     public String getUnitPrice(){
         return unitPrice.getText();
+    }
+
+    public void selectColor(String color){
+        Select select = new Select(colorDropdown);
+        select.selectByVisibleText(color);
     }
 }
