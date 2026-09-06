@@ -31,6 +31,9 @@ public class InventoryPage {
     @FindBy(id= "subtotal-value")
     WebElement subtotal;
 
+    @FindBy(id= "address")
+    WebElement addressInput;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -65,5 +68,10 @@ public class InventoryPage {
 
     public String getSubtotal(){
         return subtotal.getText();
+    }
+
+    public  void  enterAddress(String address){
+        addressInput.clear();
+        addressInput.sendKeys(address);
     }
 }

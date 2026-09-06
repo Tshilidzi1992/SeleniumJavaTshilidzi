@@ -39,5 +39,7 @@ public class LoginTests extends base {
         inventoryPage.enterQuantity("2");
 
         Assert.assertEquals(inventoryPage.getSubtotal(), "R960.00");
+
+        inventoryPage.enterAddress("123 Test Street");
     }
 }
