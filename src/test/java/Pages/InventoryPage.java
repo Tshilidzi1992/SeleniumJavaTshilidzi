@@ -19,6 +19,9 @@ public class InventoryPage {
     @FindBy(id = "storage-128GB")
     WebElement storage128GB;
 
+    @FindBy(id ="unit- price")
+    WebElement unitPrice;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
