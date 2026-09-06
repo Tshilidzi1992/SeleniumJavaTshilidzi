@@ -40,6 +40,9 @@ public class InventoryPage {
     @FindBy(id = "shipping-express")
     WebElement expressShipping;
 
+    @FindBy(id= "warranty-1yr")
+    WebElement warranty1yr;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -87,5 +90,9 @@ public class InventoryPage {
 
     public void selectExpressShipping(){
         expressShipping.click();
+    }
+
+    public void selectWarranty1yr(){
+        warranty1yr.click();
     }
 }

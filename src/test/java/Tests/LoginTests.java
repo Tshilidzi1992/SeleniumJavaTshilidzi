@@ -44,6 +44,8 @@ public class LoginTests extends base {
 
         inventoryPage.clickNext();
 
+        inventoryPage.selectWarranty1yr();
+
         inventoryPage.selectExpressShipping();
     }
 }
