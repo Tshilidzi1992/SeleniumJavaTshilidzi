@@ -47,5 +47,9 @@ public class LoginTests extends base {
         inventoryPage.selectWarranty1yr();
 
         inventoryPage.selectExpressShipping();
+
+        inventoryPage.enterDiscountCode("SAVE10");
+
+        inventoryPage.applyDiscount();
     }
 }

@@ -43,6 +43,12 @@ public class InventoryPage {
     @FindBy(id= "warranty-1yr")
     WebElement warranty1yr;
 
+    @FindBy(id= "discount-code")
+    WebElement discountCodeInput;
+
+    @FindBy(id = "apply-discount-btn")
+    WebElement applyDiscountButton;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -94,5 +100,14 @@ public class InventoryPage {
 
     public void selectWarranty1yr(){
         warranty1yr.click();
+    }
+
+    public void  enterDiscountCode(String code){
+        discountCodeInput.clear();
+        discountCodeInput.sendKeys(code);
+    }
+
+    public void applyDiscount(){
+        applyDiscountButton.click();
     }
 }
