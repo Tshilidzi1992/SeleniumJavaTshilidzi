@@ -51,5 +51,10 @@ public class LoginTests extends base {
         inventoryPage.enterDiscountCode("SAVE10");
 
         inventoryPage.applyDiscount();
+
+        Assert.assertEquals(
+                inventoryPage.getDiscountFeedback(),
+                "Code SAVE10 applied: -10%");
+
     }
 }

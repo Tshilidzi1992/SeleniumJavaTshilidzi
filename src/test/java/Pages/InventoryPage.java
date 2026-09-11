@@ -49,6 +49,10 @@ public class InventoryPage {
     @FindBy(id = "apply-discount-btn")
     WebElement applyDiscountButton;
 
+    @FindBy(id= "discount-feedback")
+    WebElement discountFeedback;
+
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -109,5 +113,9 @@ public class InventoryPage {
 
     public void applyDiscount(){
         applyDiscountButton.click();
+    }
+
+    public  String getDiscountFeedback(){
+        return discountFeedback.getText();
     }
 }
