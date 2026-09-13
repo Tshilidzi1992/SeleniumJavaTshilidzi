@@ -10,7 +10,7 @@ public class base {
 
     BrowserFactory browserFactory= new BrowserFactory();
 
-    final WebDriver driver = browserFactory.LaunchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
+   protected final WebDriver driver = browserFactory.LaunchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
 
     public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);

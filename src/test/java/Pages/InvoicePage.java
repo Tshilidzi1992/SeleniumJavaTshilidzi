@@ -1,11 +1,14 @@
 package Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class InvoicePage {
 
@@ -22,22 +25,18 @@ public class InvoicePage {
     WebElement viewInvoiceButton;
 
     public InvoicePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+        this.driver = driver; wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        PageFactory.initElements(driver, this); }
 
-    public void clickViewInvoiceHistory() {
+    public void clickViewInvoiceHistory(){
         wait.until(ExpectedConditions.elementToBeClickable(viewInvoiceHistoryButton));
-        viewInvoiceHistoryButton.click();
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].click();",
+                viewInvoiceHistoryButton);
     }
 
     public void verifyInvoiceHistoryDisplayed() {
         wait.until(ExpectedConditions.visibilityOf(invoiceHistoryPanel));
-    }
-
-    public void clickInvoiceHistory() {
-        wait.until(ExpectedConditions.elementToBeClickable(viewInvoiceButton));
-        viewInvoiceButton.click();
     }
 
     public void clickViewInvoice() {
