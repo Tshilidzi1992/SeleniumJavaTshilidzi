@@ -41,11 +41,10 @@ public class HomePage {
     }
 
     public void clickLearningMaterials() {
-        wait.until(ExpectedConditions.visibilityOf(learningMaterials));
         wait.until(ExpectedConditions.elementToBeClickable(learningMaterials)).click();
 
     }
     public void clickWebAutomationAdvance() {
-        wait.until(ExpectedConditions.elementToBeClickable(webAutomationAdvanceTab)).click();
+        webAutomationAdvanceTab.click();
     }
 }

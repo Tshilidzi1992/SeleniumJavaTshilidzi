@@ -52,6 +52,9 @@ public class InventoryPage {
     @FindBy(id= "discount-feedback")
     WebElement discountFeedback;
 
+    @FindBy(id= "purchase-device-btn")
+    WebElement confirmPurchaseButton;
+
 
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
@@ -117,5 +120,9 @@ public class InventoryPage {
 
     public  String getDiscountFeedback(){
         return discountFeedback.getText();
+    }
+
+    public void clickConfirmPurchase(){
+        confirmPurchaseButton.click();
     }
 }

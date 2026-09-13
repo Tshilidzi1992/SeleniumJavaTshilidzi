@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.InventoryPage;
+import Pages.InvoicePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,6 @@ public class LoginTests extends base {
 
     @Test
     public void clickLoginButton() throws InterruptedException {
-
         homePage.clickLoginButton();
 
         loginPage.enterUsername("rolivhuwa@gmail.com");
@@ -55,6 +55,16 @@ public class LoginTests extends base {
         Assert.assertEquals(
                 inventoryPage.getDiscountFeedback(),
                 "Code SAVE10 applied: -10%");
+
+        inventoryPage.clickConfirmPurchase();
+
+        InvoicePage invoicePage = new InvoicePage(driver);
+
+        invoicePage.clickViewInvoiceHistory();
+
+        invoicePage.verifyInvoiceHistoryDisplayed();
+
+        invoicePage.clickViewInvoice();
 
     }
 }
